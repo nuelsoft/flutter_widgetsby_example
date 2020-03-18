@@ -4,6 +4,9 @@ import 'package:flutterbyexample/launcher.dart';
 
 class App extends StatelessWidget {
   _goTo(BuildContext context, Widget w, String t, bool hasScaffold) {
+    print(hasScaffold
+        ? "Has Scaffold, Running without Scaffold"
+        : "Running with Scaffold");
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -30,7 +33,7 @@ class App extends StatelessWidget {
                       context,
                       i["widget"],
                       i["title"],
-                      Register.canLaunchSelf.contains(i["title"]),
+                      i["canLaunchSelf"] ?? false,
                     ),
                   ))
               .toList()),
