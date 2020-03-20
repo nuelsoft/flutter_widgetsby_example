@@ -26,7 +26,7 @@ class App extends StatelessWidget {
       appBar: AppBar(title: Text("Flutter By Example")),
       body: ListView(
           physics: BouncingScrollPhysics(),
-          children: Register.widgetList
+          children: Register().widgetList
               .map((i) => ListTile(
                     title: Text(i["title"]),
                     onTap: () => _goTo(
